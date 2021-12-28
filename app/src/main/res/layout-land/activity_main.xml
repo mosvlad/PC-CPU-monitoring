@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020202"
+    android:orientation="vertical"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp">
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/CPUProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="5dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="#3f51b5"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_round_border="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/CPU_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPU"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/CPUProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/CPUProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/CPUProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/CPUProgressBar" />
+
+    <DigitalClock
+        android:id="@+id/Clock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/RAMProgressBar"
+        app:layout_constraintStart_toEndOf="@+id/CPUProgressBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <org.eazegraph.lib.charts.ValueLineChart
+        android:id="@+id/CPU_graph"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:egCurveSmoothness="0.4"
+        app:egLegendHeight="40dp"
+        app:egUseCubic="true"
+        app:egUseDynamicScaling="false"
+        app:egUseOverlapFill="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/RAMProgressBar"
+        app:layout_constraintStart_toEndOf="@+id/CPUProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/CPUProgressBar" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/RAMProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="5dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="#3f51b5"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_round_border="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/RAM_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RAM"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/RAMProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/RAMProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/RAMProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/RAMProgressBar" />
+
+</android.support.constraint.ConstraintLayout>
